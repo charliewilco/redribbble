@@ -1,0 +1,42 @@
+{
+  "name": "react-raw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --colors --content-base public/",
+    "build": "webpack",
+    "build:prod": "webpack -p",
+    "deploy": "npm run build:prod && ns public -n redribbble",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.23.1",
+    "pesticide": "^1.3.1",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.9.1",
+    "source-map-loader": "^0.1.5",
+    "standard-loader": "^5.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.13.1",
+    "ff.css": "^0.2.0",
+    "react-throttle": "^0.3.0"
+  }
+}

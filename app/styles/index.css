@@ -1,0 +1,15 @@
+@import 'obsidian.css';
+@import 'ff.css';
+/*@import 'pesticide/css/pesticide.css';*/
+
+:root {
+  --ff-sans-serif: var(--avenir);
+  --ff-w: 400;
+  --headlines: inherit;
+  --body-text: inherit;
+}
+
+
+.c-card__container {
+  align-content: flex-start;
+}
