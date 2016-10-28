@@ -1,6 +1,10 @@
-# ReDribbble
+# [ReDribbble](https://redribbble.now.sh)
 
-A small dribbble client built in React.
+<a href="https://github.com/charlespeters/VVWIP">
+  <img src="https://unpkg.com/vvwip/VWIP.svg" alt="VWIP" align='right' />
+</a>
+
+A small Dribbble client built in React. Still very much an experiment and work-in-progress. Search for a username and see their most recent shots.
 
 
 ## Get Started
