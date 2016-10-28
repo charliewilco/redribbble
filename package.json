@@ -4,7 +4,7 @@
   "description": "Dribbble client in react",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --colors --content-base public/",
+    "start": "webpack-dev-server --devtool source-map --colors --content-base public/",
     "build": "webpack",
     "build:prod": "webpack -p",
     "deploy": "npm run build:prod && ns public -n redribbble",

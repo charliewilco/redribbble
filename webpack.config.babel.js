@@ -8,7 +8,6 @@ const config = {
     path: path.resolve(__dirname, './public'),
     filename: 'bundle.js'
   },
-  devtool: 'source-map',
   devServer: {
     inline: true,
     port: 9123
