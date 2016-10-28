@@ -9,7 +9,7 @@ class Card extends React.Component {
   render () {
     return (
       <div className='o-col--12/12 o-col--5/12@md o-col--4/12@lg u-my3 u-px2'>
-        <div className='c-card'>
+        <div className='c-card u-ov--hid'>
           <figure className='c-card__figure o-intrinsic o-intrinsic--4x3'>
             <img src={this.props.image} className='o-intrinsic__item u-fit--cover u-bl' alt={this.props.title} />
           </figure>
