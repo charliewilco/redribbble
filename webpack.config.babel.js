@@ -6,7 +6,6 @@ const config = {
   entry: './app/index.js',
   output: {
     path: path.resolve(__dirname, './public'),
-    // publicPath: './public/',
     filename: 'bundle.js'
   },
   devtool: 'source-map',
