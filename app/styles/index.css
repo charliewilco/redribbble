@@ -13,3 +13,45 @@
 .c-card__container {
   align-content: flex-start;
 }
+
+
+:root {
+  --ball-size: 2rem;
+  --ball-color: #FF4D00;
+}
+
+.Ball {
+  margin-right: 2rem;
+  display: inline-block;
+  background-color: var(--ball-color);
+  width: var(--ball-size);
+  height: var(--ball-size);
+  border-radius: 100%;
+  animation: .75s Bounce infinite;
+}
+
+@keyframes Bounce {
+  0% {
+    transform: none;
+    animation-timing-function: cubic-bezier(.78, .01, .83, .67);
+    box-shadow: none;
+  }
+
+  25%, 45% {}
+
+  50% {
+    transform: translateY(2rem);
+  }
+
+  55% {
+    transform: translateY(2.5rem);
+  }
+
+  75% {}
+
+  100% {
+    transform: none;
+    animation-timing-function: ease-in;
+    box-shadow: none;
+  }
+}
