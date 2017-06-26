@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 
 export default ({ shots, user }) =>
-  <div className='c-card__container o-container--full o-container--center o-flex o-flex--wrap o-flex--j--c'>
+  <div className='o-container--full o-container--center SuperContainer'>
     {shots.map(shot => {
       console.log(shot)
       return (

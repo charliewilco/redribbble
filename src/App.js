@@ -40,15 +40,20 @@ class App extends Component {
 
   render () {
     return (
-      <div className='u-px3'>
-        <Header name='Redribbble' />
-        <div className='o-container--full o-container--center u-px2'>
-          <div className='o-container--sm u-mb3'>
-            <label htmlFor='input' className='u-left'>Search Dribbble Username</label>
-            <Debounce time='400' handler='onChange'>
-              <input id='input' type='text' className='c-field' placeholder='Username (eg. simplebits)' onChange={e => this.update(e)} />
-            </Debounce>
+      <div className='u-mb6'>
+        <Header name='Redribbble'>
+          <div className='o-container--full o-container--center u-px2 u-mb2'>
+            <label htmlFor='input' className='Label u-lt-2 u-caps u-w700 u-left'>Search Dribbble Username</label>
           </div>
+          <div className='Input__container'>
+            <div className='o-container--full o-container--center'>
+              <Debounce time='400' handler='onChange'>
+                <input id='input' type='text' className='Input u-px2' placeholder='Username (eg. simplebits)' onChange={e => this.update(e)} />
+              </Debounce>
+            </div>
+          </div>
+        </Header>
+        <div className='o-container--full o-container--center u-px2'>
           <If condition={this.state.found === false}>
             <h2 className='u-red'>{this.state.user} not Found</h2>
           </If>
