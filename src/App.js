@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Debounce } from 'react-throttle'
 import axios from 'axios'
-import '../styles/index.css'
 import Header from './Header'
 import SuperContainer from './Container'
 
@@ -9,25 +8,18 @@ const If = props =>
   props.condition ? props.children : null
 
 class App extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      user: 'charlespeters',
-      shots: [],
-      found: true
-    }
-
-    this.update.bind(this)
+  state = {
+    user: 'charlespeters',
+    shots: [],
+    found: true
   }
 
   componentDidMount () {
     this.serverRequest(this.state.user)
   }
 
-  componentWillUnmount () {}
 
-  serverRequest (user) {
+  serverRequest = user => {
     const url = `https://api.dribbble.com/v1/users/${user}/shots?access_token=${this.props.source}`
     return axios.get(url)
       .then((result) => {
@@ -39,13 +31,9 @@ class App extends Component {
       })
   }
 
-  update (e) {
+  update = (e) => {
     e.preventDefault()
 
-    // const dribbble new Promise(function(resolve, reject) {
-    //
-    // });
-    // setTimeOut()
     this.setState({ user: e.target.value })
     return this.serverRequest(this.state.user)
   }
@@ -58,7 +46,7 @@ class App extends Component {
           <div className='o-container--sm u-mb3'>
             <label htmlFor='input' className='u-left'>Search Dribbble Username</label>
             <Debounce time='400' handler='onChange'>
-              <input id='input' type='text' className='c-field' placeholder='Username (eg. simplebits)' onChange={this.update.bind(this)} />
+              <input id='input' type='text' className='c-field' placeholder='Username (eg. simplebits)' onChange={e => this.update(e)} />
             </Debounce>
           </div>
           <If condition={this.state.found === false}>
