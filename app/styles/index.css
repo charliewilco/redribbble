@@ -23,7 +23,7 @@
 .Ball {
   margin-right: 2rem;
   display: inline-block;
-  background-color: var(--ball-color);
+  background-color: var(--ball-color, tomato);
   width: var(--ball-size);
   height: var(--ball-size);
   border-radius: 100%;
