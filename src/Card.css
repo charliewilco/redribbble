@@ -1,0 +1,50 @@
+.Card {
+  border-radius: .375rem;
+  color: #b3dbee;
+  overflow: hidden;
+  background: linear-gradient(to right, #092e41, #0c6491 93.37%);
+  box-shadow: 0 0 4px rgba(0,0,0,.07), 0 4px 8px rgba(0,0,0,.14);
+}
+
+.Card__title {
+  color: #AAD7F4;
+  font-family: 'Avenir Next';
+  font-size: 1.0625rem;
+  line-height: 1.1;
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+
+.Card__figure {
+  display: block;
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-top: 75%;
+  z-index: inherit;
+}
+
+.Card__shot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.Card__meta {
+  letter-spacing: 2px;
+  font-size: 75%;
+  text-transform: uppercase;
+}
+
+.Card__content {
+  padding: 1rem;
+}
+
+.Card__link {
+  color: #F6BE30;
+}

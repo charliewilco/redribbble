@@ -1,25 +1,19 @@
 import React from 'react'
 import Tray from './Tray'
+import './Card.css'
 
-export default (props) => (
-  <div className='o-col--12/12 o-col--5/12@md o-col--4/12@lg u-my3 u-px2'>
-    <div className='Card u-ov--hid'>
-      <figure className='c-card__figure o-intrinsic o-intrinsic--4x3'>
-        <img src={props.image} className='o-intrinsic__item u-fit--cover u-bl' alt={props.title} />
-      </figure>
-      <Tray
-        likes={props.likes}
-        views={props.views}
-        rebounds={props.rebounds}
-      />
-      <div className='c-card__content u-p3'>
-        <header className='u-mb2'>
-          <h2 className='h6 u-w500 u-mb2 u-lh-1'>
-            <a href={props.url}>{props.title}</a>
-          </h2>
-          <span className='u-ltgray'>{props.user}</span>
-        </header>
-      </div>
+export default ({ image, title, description, images, likes_count, views_count, html_url, rebounds_count }) => (
+  <div className='Card'>
+    <figure className='Card__figure'>
+      <img src={images.hidpi ? images.hidpi : images.normal} className='Card__shot' alt={title} />
+    </figure>
+    <Tray likes={likes_count} views={views_count} rebounds={rebounds_count} />
+    <div className='Card__content'>
+      <header>
+        <h3 className='Card__title'>
+          <a className='Card__link' href={html_url}>{title}</a>
+        </h3>
+      </header>
     </div>
   </div>
 )

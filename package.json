@@ -3,15 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.16.2",
-    "ff.css": "^0.2.0",
     "obsidian.css": "^2.1.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-throttle": "^0.3.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7",
+    "react-scripts": "^1.0.10",
     "serve": "^6.0.0"
   },
   "now": {

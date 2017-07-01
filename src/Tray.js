@@ -1,12 +1,12 @@
 import React from 'react'
+import './Tray.css'
 
-const Tray = props =>
-  <div>
-    <ul className='list--reset o-flex o-flex--j--c u-center u-py2 u-bg--palegray u-w500 small'>
-      <li className='small u-p1 o-col--4/12'>{props.likes} Likes</li>
-      <li className='small u-p1 o-col--4/12'>{props.views} Views</li>
-      <li className='small u-p1 o-col--4/12'>{props.rebounds} Rebounds</li>
+export default ({ likes, views, rebounds }) => (
+  <div className='Tray'>
+    <ul className='Tray__list'>
+      <li>{likes} Likes</li>
+      <li>{views} Views</li>
+      <li>{rebounds} Rebounds</li>
     </ul>
   </div>
-
-export default Tray
+)

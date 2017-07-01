@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { Debounce } from 'react-throttle'
-import axios from 'axios'
 import Header from './Header'
 import SuperContainer from './Container'
+import Error from './Error'
+import Loading from './Loading'
 
-const If = props =>
-  props.condition ? props.children : null
-
-class App extends Component {
+export default class extends Component {
   state = {
     user: 'charlespeters',
     shots: [],
-    found: true
+    loaded: false,
+    found: false
   }
 
   componentDidMount () {
@@ -20,48 +19,42 @@ class App extends Component {
 
 
   serverRequest = user => {
-    const url = `https://api.dribbble.com/v1/users/${user}/shots?access_token=${this.props.source}`
-    return axios.get(url)
-      .then((result) => {
-        this.setState({ found: true, shots: result.data })
-      })
-      .catch(err => {
-        console.warn(err)
-        this.setState({ found: false })
-      })
+    fetch(`https://api.dribbble.com/v1/users/${user}/shots?access_token=${this.props.source}`)
+      .then(res => res.json())
+      .then(data => this.setState({ loaded: true, found: true, shots: data }))
+      .catch(err => this.setState({ found: false }, console.error(err)))
   }
 
   update = (e) => {
     e.preventDefault()
 
-    this.setState({ user: e.target.value })
-    return this.serverRequest(this.state.user)
+    return this.setState({ user: e.target.value }, this.serverRequest(this.state.user))
   }
 
   render () {
+    const { user, found, loaded } = this.state
     return (
-      <div className='u-mb6'>
+      <div>
         <Header name='Redribbble'>
-          <div className='o-container--full o-container--center u-px2 u-mb2'>
-            <label htmlFor='input' className='Label u-lt-2 u-caps u-w700 u-left'>Search Dribbble Username</label>
+          <div className='Wrapper u-px2 u-mb2'>
+            <label htmlFor='input' className='Label u-lt-2 u-caps u-left'>Search Dribbble Username</label>
           </div>
           <div className='Input__container'>
-            <div className='o-container--full o-container--center'>
+            <div className='Wrapper'>
               <Debounce time='400' handler='onChange'>
                 <input id='input' type='text' className='Input u-px2' placeholder='Username (eg. simplebits)' onChange={e => this.update(e)} />
               </Debounce>
             </div>
           </div>
         </Header>
-        <div className='o-container--full o-container--center u-px2'>
-          <If condition={this.state.found === false}>
-            <h2 className='u-red'>{this.state.user} not Found</h2>
-          </If>
+        <div className='Wrapper Wrapper--b'>
+          {
+            loaded
+            ? found === false ? <Error user={user} /> : <SuperContainer {...this.state} />
+            : <Loading />
+          }
         </div>
-        <SuperContainer {...this.state} />
       </div>
     )
   }
 }
-
-export default App

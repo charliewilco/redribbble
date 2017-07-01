@@ -1,0 +1,37 @@
+.Loading {
+  padding: 5rem 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  text-align: center;
+}
+
+.Loading__text {
+  color: #b3dbee;
+  font-size: 1.25rem;
+  font-family: 'Avenir Next';
+  font-weight: 500;
+}
+
+.Loading__court {
+  max-width: 18rem;
+  margin: 0 auto 1rem;
+  display: block;
+  animation-duration: 2s;
+  animation-name: court;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+
+@keyframes court {
+  0% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

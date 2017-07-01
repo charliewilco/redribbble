@@ -1,5 +1,7 @@
-
-/*@import 'pesticide/css/pesticide.css';*/
+html {
+  background: #092e41;
+  font-family: 'Avenir Next';
+}
 
 :root {
   --ff-sans-serif: var(--avenir);
@@ -8,87 +10,41 @@
   --body-text: inherit;
 }
 
-
-.c-card__container {
-  align-content: flex-start;
-}
-
-
-:root {
-  --ball-size: 2rem;
-  --ball-color: #FF4D00;
-}
-
-.Ball {
-  margin-right: 2rem;
-  display: inline-block;
-  background-color: white;
-  width: var(--ball-size);
-  height: var(--ball-size);
-  border-radius: 100%;
-  animation: .75s Bounce infinite;
-}
-
-.Header {
-  background-color: #FFBA00;
-  color: white;
-}
-
 .Input {
   display: block;
   width: 100%;
-  background: white;
-  color: #7F5D00;
+  background: none;
+  color: inherit;
   border: 0;
   padding: 1rem;
   border-radius: 0;
 }
 
+.Input::placeholder {
+  font-style: italic;
+  color: #b3dbee;
+}
+
 .Input__container {
-  background: white;
-  border-top: 1px solid #CCC;
-  border-bottom: 1px solid #CCC;
+  background: #063651;
+  color: white;
+  border-top: 1px solid rgba(30,184,235,.35);
+  border-bottom: 1px solid rgba(30,184,235,.35);
 }
 
 
 .Label {
-  color: black;
+  color: #b3dbee;
   opacity: .5;
 }
 
-@keyframes Bounce {
-  0% {
-    transform: none;
-    animation-timing-function: cubic-bezier(.78, .01, .83, .67);
-    box-shadow: none;
-  }
-
-  25%, 45% {}
-
-  50% {
-    transform: translateY(2rem);
-  }
-
-  55% {
-    transform: translateY(2.5rem);
-  }
-
-  75% {}
-
-  100% {
-    transform: none;
-    animation-timing-function: ease-in;
-    box-shadow: none;
-  }
+.Wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+  width: 100%;
 }
 
-
-.SuperContainer {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Card {
-  border-radius: 4px;
-  background: white;
+.Wrapper--b {
+  margin-bottom: 3rem;
 }

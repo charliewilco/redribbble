@@ -1,0 +1,7 @@
+.Error {
+  color: #D25D59;
+}
+
+.Error__message {
+  color: inherit;
+}

@@ -1,0 +1,17 @@
+.Tray {
+  background: #0c6491;
+}
+
+.Tray__list {
+  list-style: inside none;
+  display: flex;
+  justify-content: center;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  text-align: center;
+  font-size: .75rem;
+}
+
+.Tray__list > * {
+  width: calc(100% / 3);
+}
