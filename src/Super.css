@@ -13,19 +13,13 @@
 }
 
 @media only screen and (min-width: 31.25rem) {
-  .Super__column {
-    width: 50%;
-  }
+  .Super__column { width: 50%; }
 }
 
 @media only screen and (min-width: 48rem) {
-  .Super__column {
-    width: 33.33333%;
-  }
+  .Super__column { width: 33.33333%; }
 }
 
 @media only screen and (min-width: 57.75rem) {
-  .Super__column {
-    width: 25%;
-  }
+  .Super__column { width: 25%; }
 }
