@@ -1,13 +1,13 @@
-html {
-  background: #092e41;
-  font-family: 'Avenir Next';
-}
-
 :root {
-  --ff-sans-serif: var(--avenir);
+  --ss: 'Hind', 'Avenir Next', 'Segoe UI', 'PT Sans', sans-serif;
   --ff-w: 400;
   --headlines: inherit;
   --body-text: inherit;
+}
+
+html {
+  background: #092e41;
+  font-family: var(--ss);
 }
 
 .Input {
@@ -18,10 +18,10 @@ html {
   border: 0;
   padding: 1rem;
   border-radius: 0;
+  outline: none;
 }
 
 .Input::placeholder {
-  font-style: italic;
   color: #b3dbee;
 }
 
@@ -36,6 +36,9 @@ html {
 .Label {
   color: #b3dbee;
   opacity: .5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .875rem;
 }
 
 .Wrapper {

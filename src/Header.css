@@ -4,7 +4,7 @@
 }
 
 .Header__title {
-  font-family: 'Avenir Next';
+  font-family: var(--ss);
   font-size: 1.25rem;
   line-height: 1.1;
   display: inline-block;

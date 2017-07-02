@@ -10,7 +10,8 @@ export default class extends Component {
     user: 'charlespeters',
     shots: [],
     loaded: false,
-    found: false
+    found: false,
+    focused: false
   }
 
   componentDidMount () {
@@ -32,17 +33,26 @@ export default class extends Component {
   }
 
   render () {
-    const { user, found, loaded } = this.state
+    const { user, found, loaded, focused } = this.state
     return (
       <div>
         <Header name='Redribbble'>
           <div className='Wrapper u-px2 u-mb2'>
-            <label htmlFor='input' className='Label u-lt-2 u-caps u-left'>Search Dribbble Username</label>
+            <label htmlFor='input' className='Label'>Search Dribbble Username</label>
           </div>
-          <div className='Input__container'>
+          <div className='Input__container' style={{ borderColor: focused && '#ffba00' }}>
             <div className='Wrapper'>
               <Debounce time='400' handler='onChange'>
-                <input id='input' type='text' className='Input u-px2' placeholder='Username (eg. simplebits)' onChange={e => this.update(e)} />
+                <input
+                  id='input'
+                  type='text'
+                  className='Input u-px2'
+                  placeholder='Username (eg. simplebits)'
+                  onFocus={() => this.setState({ focused: true })}
+                  onBlur={() => this.setState({ focused: false })}
+                  ref={input => (this.textInput = input)}
+                  onChange={e => this.update(e)}
+                />
               </Debounce>
             </div>
           </div>
