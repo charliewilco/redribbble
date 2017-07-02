@@ -50,7 +50,6 @@ export default class extends Component {
                   placeholder='Username (eg. simplebits)'
                   onFocus={() => this.setState({ focused: true })}
                   onBlur={() => this.setState({ focused: false })}
-                  ref={input => (this.textInput = input)}
                   onChange={e => this.update(e)}
                 />
               </Debounce>
