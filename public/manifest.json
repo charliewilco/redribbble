@@ -1,6 +1,6 @@
 {
-  "short_name": "Redribble",
-  "name": "Redribble: a React Dribbble Client",
+  "short_name": "Redribbble",
+  "name": "Redribbble: a React Dribbble Client",
   "icons": [
     {
       "src": "favicon.ico",
