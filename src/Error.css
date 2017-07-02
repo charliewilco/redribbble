@@ -4,4 +4,5 @@
 
 .Error__message {
   color: inherit;
+  font-family: var(--ss);
 }
